@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김신건 - Backend Engineer CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: A4; margin: 0; }
+    html { font-size: 10px; }
+
+    body {
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system, sans-serif;
+      color: #1e293b;
+      background: #94a3b8;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 8mm auto;
+      background: #fff;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; }
+      .page:last-child { page-break-after: auto; }
+      .no-print { display: none !important; }
+    }
+
+    .sidebar {
+      width: 58mm;
+      background: #1e293b;
+      color: #cbd5e1;
+      padding: 11mm 5.5mm 10mm 7mm;
+      flex-shrink: 0;
+      font-size: 0.83rem;
+      line-height: 1.45;
+    }
+    .sidebar .section { margin-bottom: 4.5mm; }
+    .sidebar .section:last-child { margin-bottom: 0; }
+    .sidebar .section-title {
+      font-size: 0.75rem; font-weight: 700; color: #93c5fd;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 2.2mm; padding-bottom: 1.2mm;
+      border-bottom: 1px solid #334155;
+    }
+    .sidebar .contact-item {
+      display: flex; align-items: center;
+      margin-bottom: 1.3mm; font-size: 0.75rem;
+      color: #e2e8f0; word-break: break-all;
+    }
+    .sidebar .contact-item .icon {
+      width: 12px; height: 12px; margin-right: 1.8mm; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .sidebar .contact-item .icon svg {
+      width: 12px; height: 12px; fill: #94a3b8; display: block;
+    }
+    .sidebar .contact-item a { color: #e2e8f0; text-decoration: none; }
+    .sidebar .skill-category { margin-bottom: 2mm; }
+    .sidebar .skill-label { font-size: 0.69rem; color: #94a3b8; font-weight: 500; margin-bottom: 0.8mm; }
+    .sidebar .tags { display: flex; flex-wrap: wrap; gap: 1mm; }
+    .sidebar .tag {
+      background: #334155; color: #e2e8f0;
+      padding: 0.5mm 2mm; border-radius: 2px;
+      font-size: 0.67rem; white-space: nowrap;
+    }
+    .sidebar .edu-item { margin-bottom: 2.2mm; }
+    .sidebar .edu-name { font-size: 0.78rem; font-weight: 700; color: #f1f5f9; }
+    .sidebar .edu-detail { font-size: 0.69rem; color: #94a3b8; }
+    .sidebar .edu-gpa { font-size: 0.71rem; color: #93c5fd; font-weight: 500; }
+    .sidebar .cert-item {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 1.1mm; font-size: 0.7rem;
+    }
+    .sidebar .cert-name { color: #e2e8f0; }
+    .sidebar .cert-date { color: #64748b; font-size: 0.64rem; flex-shrink: 0; margin-left: 1.5mm; }
+    .sidebar .award-item { margin-bottom: 1.5mm; }
+    .sidebar .award-name { font-size: 0.7rem; color: #e2e8f0; line-height: 1.35; }
+    .sidebar .award-date { font-size: 0.63rem; color: #64748b; }
+    .sidebar .activity-item { margin-bottom: 1.8mm; }
+    .sidebar .activity-name { font-size: 0.72rem; color: #e2e8f0; font-weight: 500; }
+    .sidebar .activity-detail { font-size: 0.66rem; color: #94a3b8; line-height: 1.35; }
+
+    .main {
+      flex: 1; padding: 11mm 13mm 10mm 9mm;
+      font-size: 0.86rem; overflow: hidden;
+    }
+    .main .header { margin-bottom: 3mm; }
+    .main .header h1 { font-size: 2.1rem; font-weight: 700; color: #0f172a; line-height: 1.1; letter-spacing: -0.02em; }
+    .main .header h2 { font-size: 1.1rem; font-weight: 400; color: #475569; margin-top: 0.5mm; }
+    .main .header .divider { height: 1.5px; background: linear-gradient(to right, #2563eb, #93c5fd, transparent); margin-top: 2.5mm; }
+    .main .section { margin-bottom: 3.5mm; }
+    .main .section-title {
+      font-size: 0.83rem; font-weight: 700; color: #1e293b;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding-bottom: 1.2mm; border-bottom: 1.5px solid #e2e8f0;
+      margin-bottom: 2.5mm;
+    }
+    .main .about-list { list-style: none; }
+    .main .about-list li {
+      position: relative; padding-left: 2.5mm;
+      margin-bottom: 0.8mm; font-size: 0.78rem;
+      color: #334155; line-height: 1.45;
+    }
+    .main .about-list li::before {
+      content: ''; position: absolute; left: 0; top: 1.6mm;
+      width: 2.5px; height: 2.5px; border-radius: 50%; background: #2563eb;
+    }
+    .exp-item { margin-bottom: 3.2mm; }
+    .exp-item:last-child { margin-bottom: 0; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3mm; }
+    .exp-company { font-size: 0.86rem; font-weight: 700; color: #0f172a; }
+    .exp-period { font-size: 0.7rem; color: #64748b; flex-shrink: 0; margin-left: 2mm; }
+    .exp-role { font-size: 0.74rem; color: #475569; margin-bottom: 0.5mm; }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.8mm; margin-bottom: 1.2mm; }
+    .exp-tag { background: #eff6ff; color: #2563eb; padding: 0.3mm 1.8mm; border-radius: 2px; font-size: 0.63rem; font-weight: 500; }
+    .exp-list { list-style: none; }
+    .exp-list li { position: relative; padding-left: 3mm; margin-bottom: 0.6mm; font-size: 0.76rem; color: #334155; line-height: 1.38; }
+    .exp-list li::before { content: '•'; position: absolute; left: 0; color: #94a3b8; font-weight: 700; }
+    .exp-list li strong { font-weight: 600; color: #1e293b; }
+    .proj-item { margin-bottom: 3mm; }
+    .proj-item:last-child { margin-bottom: 0; }
+    .proj-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3mm; }
+    .proj-name { font-size: 0.86rem; font-weight: 700; color: #0f172a; }
+    .proj-role { font-size: 0.7rem; color: #475569; margin-bottom: 0.5mm; }
+    .proj-desc { font-size: 0.74rem; color: #1e293b; font-weight: 500; margin-bottom: 1mm; }
+
+    .print-btn {
+      position: fixed; bottom: 20px; right: 20px;
+      background: #2563eb; color: white; border: none;
+      padding: 12px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.4);
+      z-index: 100; font-family: inherit;
+    }
+    .print-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37,99,235,0.5); }
+  </style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">PDF로 저장</button>
+
+<div class="page">
+  <div class="sidebar">
+    <div class="section">
+      <div class="section-title">Contact</div>
+      <div class="contact-item"><span class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span><span>dev.shinkeonkim@gmail.com</span></div>
+      <div class="contact-item"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></span><a href="https://github.com/shinkeonkim">github.com/shinkeonkim</a></div>
+      <div class="contact-item"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span><a href="https://코드.kr">https://코드.kr</a></div>
+      <div class="contact-item"><span class="icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span><a href="https://linkedin.com/in/shinkeonkim">linkedin.com/in/shinkeonkim</a></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Skills</div>
+      <div class="skill-category">
+        <div class="skill-label">Languages</div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Ruby</span><span class="tag">C/C++</span>
+          <span class="tag">Golang</span><span class="tag">Java</span><span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-label">Backend</div>
+        <div class="tags">
+          <span class="tag">Ruby on Rails</span><span class="tag">Django</span>
+          <span class="tag">FastAPI</span><span class="tag">Flask</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-label">Frontend</div>
+        <div class="tags"><span class="tag">React.js</span><span class="tag">Vue.js</span></div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-label">Database</div>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">Redis</span></div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-label">DevOps</div>
+        <div class="tags">
+          <span class="tag">Docker</span><span class="tag">GitHub Actions</span>
+          <span class="tag">AWS</span><span class="tag">k8s</span>
+          <span class="tag">ArgoCD</span><span class="tag">Terraform</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-name">국민대학교</div>
+        <div class="edu-detail">소프트웨어전공 학사</div>
+        <div class="edu-gpa">GPA 4.42 / 4.5 (전공 4.46)</div>
+        <div class="edu-detail">2019.03 ~ 2026.08 (졸업예정)</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-name">한민고등학교</div>
+        <div class="edu-detail">2016.03 ~ 2019.02</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Certifications</div>
+      <div class="cert-item"><span class="cert-name">정보처리기사</span><span class="cert-date">2025.09</span></div>
+      <div class="cert-item"><span class="cert-name">ADsP (데이터 분석 준전문가)</span><span class="cert-date">2025.09</span></div>
+      <div class="cert-item"><span class="cert-name">제한무선통신사</span><span class="cert-date">2025.06</span></div>
+      <div class="cert-item"><span class="cert-name">PCCP Level 4 (Python)</span><span class="cert-date">2025.05</span></div>
+      <div class="cert-item"><span class="cert-name">SQLD (SQL 개발자)</span><span class="cert-date">2024.06</span></div>
+      <div class="cert-item"><span class="cert-name">네트워크 관리사 2급</span><span class="cert-date">2024.04</span></div>
+      <div class="cert-item"><span class="cert-name">Coding Specialist Professional 1급 (C++)</span><span class="cert-date">2022.01</span></div>
+      <div class="cert-item"><span class="cert-name">코딩지도사 1급</span><span class="cert-date">2020.03</span></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Awards</div>
+      <div class="award-item">
+        <div class="award-name">멋쟁이사자처럼 10기 전체 해커톤 동상</div>
+        <div class="award-date">전국 900명·150팀 · 2022.08</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">Lotte x Likelion 연계 해커톤 동상</div>
+        <div class="award-date">2020.10</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">제 3회 국민대학교 알고리즘 대회 장려상</div>
+        <div class="award-date">2018.08</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">2018 ICT 어워드코리아 이산수학 장려상</div>
+        <div class="award-date">2018.07</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">2017 Robocup 机器⼈世界杯中国赛华南公开赛 三等奖</div>
+        <div class="award-date">한국 대표단 · 2017.12</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">2017 ICT 어워드코리아 C언어 알고리즘 프로그래밍 동상</div>
+        <div class="award-date">2017.11</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">2017 제 5회 한국로보컵오픈대회 Soccer Light Weight 부문 2위</div>
+        <div class="award-date">2017.02</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Activities</div>
+      <div class="activity-item">
+        <div class="activity-name">국민대학교 멋쟁이사자처럼</div>
+        <div class="activity-detail">
+          10기 / 12기 / 13기 운영진 (2022, 2024, 2025)<br>
+          9기 운영진 대표 (2021)<br>
+          8기 부원 (2020)<br>
+          Django/GitHub/Algorithm 세션 운영<br>
+          12개 대학 연합 해커톤 운영진
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-name">SIPE 4기 <span style="color:#64748b;">2025.04~2025.08</span></div>
+        <div class="activity-detail">AI/LLM 활용 미션 발제 및 진행</div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-name">국민대학교 소프트웨어학부 헬퍼</div>
+        <div class="activity-detail">
+          소프트웨어프로젝트2 헬퍼 (2025)<br>
+          소프트웨어프로젝트1 헬퍼 (2020, 2025)<br>
+          LabAnywhere Supporter (2020)
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-name">강사 / 교육 봉사</div>
+        <div class="activity-detail">
+          구일고등학교 교육과정 보조강사 (2020)<br>
+          제21기 하계 대학생 재능봉사 캠프 (2020)<br>
+          구로고등학교 교육과정 보조강사 (2019)<br>
+          한민고 겨울방학 코딩캠프 강사 (2019)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>김신건</h1>
+      <h2>Backend Engineer</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">About</div>
+      <ul class="about-list">
+        <li>자신의 한계를 데이터로 진단하고 반복적 개선을 실행하는 성장 마인드셋을 실천합니다.</li>
+        <li>사용자 리서치와 요구사항 분석을 기반으로 MVP를 설계하고, 프로덕션 수준의 서비스를 엔드투엔드로 구현합니다.</li>
+        <li>기술 트렌드를 모니터링하고 비용 대비 효과를 평가해 적합한 기술 스택을 선별 및 도입합니다.</li>
+        <li>AWS와 온프레미스 환경에서 IaC로 인프라를 프로비저닝하고 CI/CD 파이프라인을 통해 무중단 배포를 구축합니다.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Work Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">(주) 그렙</span>
+          <span class="exp-period">2024.07 ~ 2025.03</span>
+        </div>
+        <div class="exp-role">교육솔루션팀 / Backend Engineer</div>
+        <div class="exp-tags"><span class="exp-tag">Ruby on Rails</span><span class="exp-tag">Django</span></div>
+        <ul class="exp-list">
+          <li><strong>KDT 역량진단리포트 백엔드 단독 개발</strong> — 모든 문제 타입별 역량 도출 설계·모델링, Sidekiq 비동기 리포트 생성</li>
+          <li><strong>프로그래머스 LMS 기능 고도화</strong> — 스쿨/캠퍼스 LMS 유지보수 및 신규 기능 개발 주도</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">(주) 그렙</span>
+          <span class="exp-period">2020.12 ~ 2022.10</span>
+        </div>
+        <div class="exp-role">채용서비스팀 / SW Engineer</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Ruby on Rails</span><span class="exp-tag">Vue.js</span>
+          <span class="exp-tag">Flask</span><span class="exp-tag">AWS</span><span class="exp-tag">Terraform</span>
+        </div>
+        <ul class="exp-list">
+          <li><strong>이력서 모델 구조 개편</strong> — jsonb 비정규화 → 항목별 정규화, 무중단 마이그레이션 설계, API 응답 속도 개선</li>
+          <li><strong>NICE 본인인증 내부 서비스</strong> — Flask, Terraform, AWS Lambda, DynamoDB 활용</li>
+          <li><strong>GitHub 분석 정밀도 개선</strong> — 엣지케이스 분석으로 Commit 미분석 건수 0건 달성</li>
+          <li><strong>추천 채용공고 고도화</strong> — ElasticSearch → AWS Personalize 개인화 추천 전환</li>
+          <li><strong>채용공고 Vue.js 포팅 (SSR→SPA)</strong> — 레거시 CoffeeScript 제거, Vue 2.7 Composition API 전환</li>
+          <li><strong>과제관/코딩테스트 연습 개편</strong> — 계열사 정보 활용 필터 및 추천 포지션 노출 영역 개발</li>
+          <li><strong>개발자 검색 리팩토링</strong> — SSR → Backend API 분리, 테스트 커버리지 70%→80% 개선</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">(주) 그렙</span>
+          <span class="exp-period">2019.06 ~ 2020.08</span>
+        </div>
+        <div class="exp-role">알고리즘 컨텐츠 제작자 · C/C++, Python, Java</div>
+        <ul class="exp-list">
+          <li>프로그래머스 서비스 알고리즘 문제 기획, 출제 및 검수</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-company">특전사령부 제11공수특전여단</span>
+          <span class="exp-period">2022.11 ~ 2024.05</span>
+        </div>
+        <div class="exp-role">정보체계운용정비병</div>
+        <ul class="exp-list">
+          <li>인트라넷(NAC/방화벽) 운영, 서버/웹페이지 관리, 전산 장비 유지보수</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="section">
+      <div class="section-title">Projects</div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">Mefit</span>
+          <span class="exp-period">2026.02 ~ 현재</span>
+        </div>
+        <div class="proj-role">팀장 / BE / Infra · Django, DRF, React.js, k3s, AWS</div>
+        <div class="proj-desc">취업·이직 대비 가상 면접 플랫폼</div>
+        <ul class="exp-list">
+          <li>k3s 클러스터 EC2 프로비저닝, 멀티 리포 CI/CD 연결로 서비스별 독립 배포</li>
+          <li>AWS S3-SNS-SQS-Lambda 이벤트 드리븐 미디어 분석 파이프라인 설계·운영</li>
+          <li>React.js에 Feature-Sliced Design 적용, 모듈러 프런트엔드 아키텍처 수립</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">깜빡이</span>
+          <span class="exp-period">2025.10 ~ 2025.11</span>
+        </div>
+        <div class="proj-role">BE / Infra · Django, Celery, Redis, K3s, ArgoCD, AWS</div>
+        <div class="proj-desc">아동 집중력 향상 AI 기반 게임형 에듀테크 플랫폼</div>
+        <ul class="exp-list">
+          <li>Celery/Redis 비동기 AI 리포트 생성, LLM 연동 맞춤형 학습 조언 자동 생성</li>
+          <li>홈랩 K3s + ArgoCD GitOps 배포 자동화, AWS RDS-EC2 프로덕션 환경 구축</li>
+          <li>GitHub Actions CI/CD 파이프라인, Swagger(OpenAPI 3.0) 문서 자동화</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">Athena</span>
+          <span class="exp-period">2025.04 ~ 2025.06</span>
+        </div>
+        <div class="proj-role">기획·단독 개발 · Django, Rust, Docker, gRPC, Celery, LLM</div>
+        <div class="proj-desc">인터랙티브 AI 알고리즘 학습 플랫폼</div>
+        <ul class="exp-list">
+          <li>LLM 코드 분석 피드백 시스템, Docker 다중 언어(C++, Python, Ruby, Java) 격리 실행 환경 구축</li>
+          <li>Celery/Redis 활용 solved.ac API 및 웹 파싱 기반 문제 수집 자동화 파이프라인</li>
+          <li>MSA 설계 — Code Executor, Judger, Testcase Generator gRPC 기반 연동</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">Sellon</span>
+          <span class="exp-period">2022.08</span>
+        </div>
+        <div class="proj-role">BE / Infra · Django, PostgreSQL, AWS EC2, Docker</div>
+        <div class="proj-desc">물건 경매 방식 교환 플랫폼 (멋쟁이사자처럼 10기 해커톤 동상)</div>
+        <ul class="exp-list">
+          <li>Django/DRF 기반 API 서버 개발, AWS EC2/ELB/Docker 인프라 구축</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">PeacePiece</span>
+          <span class="exp-period">2022.07 ~ 2022.09</span>
+        </div>
+        <div class="proj-role">팀리드 / BE / Infra · Django, Docker, PostgreSQL, AWS EC2/ELB</div>
+        <div class="proj-desc">환경 보호 활동 기반 가상 공간 꾸미기 웹 플랫폼</div>
+        <ul class="exp-list">
+          <li>전체 프로젝트 구조 설계 및 일정 조율, Django/DRF API 서버 개발</li>
+          <li>Docker(docker-compose) 활용 서버 이미지 빌드 구조 구축</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">TTL (Today They Learned)</span>
+          <span class="exp-period">2022.01 ~ 2022.04</span>
+        </div>
+        <div class="proj-role">팀리드 / BE / Infra · Django, DRF, Celery, Redis, Docker</div>
+        <div class="proj-desc">다양한 플랫폼의 TIL을 한 곳에 모아보는 서비스</div>
+        <ul class="exp-list">
+          <li>Celery/cron-job으로 GitHub, Velog 등 TIL 글 주기적 동기화 기능 개발</li>
+          <li>Swagger/drf-yasg 활용 API 문서화, 프론트엔드 개발자와 협업 구조 수립</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <span class="proj-name">Lotteng</span>
+          <span class="exp-period">2020.09 ~ 2020.10</span>
+        </div>
+        <div class="proj-role">BE / Infra · Django, AWS EC2, Nginx</div>
+        <div class="proj-desc">롯데 계열사 마감 세일 통합 플랫폼 (Lotte x Likelion 해커톤 동상)</div>
+        <ul class="exp-list">
+          <li>프로젝트 전반적인 설계·개발, AWS EC2/nginx/gunicorn 서버 인프라 구성</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
