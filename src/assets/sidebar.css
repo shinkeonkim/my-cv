@@ -1,0 +1,167 @@
+.sidebar {
+  width: 58mm;
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 8mm 5mm 7mm 6mm;
+  flex-shrink: 0;
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+.sidebar .section {
+  margin-bottom: 3.5mm;
+}
+
+.sidebar .section:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar .section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #93c5fd;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 2.2mm;
+  padding-bottom: 1.2mm;
+  border-bottom: 1px solid #334155;
+}
+
+.sidebar .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.3mm;
+  font-size: 0.75rem;
+  color: #e2e8f0;
+  word-break: break-all;
+}
+
+.sidebar .contact-item .icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 1.8mm;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .contact-item .icon svg {
+  width: 12px;
+  height: 12px;
+  fill: #94a3b8;
+  display: block;
+}
+
+.sidebar .contact-item a {
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.sidebar .skill-category {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5mm;
+  margin-bottom: 0.6mm;
+}
+
+.sidebar .skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar .skill-label {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-weight: 600;
+  flex-shrink: 0;
+  width: 11mm;
+  padding-top: 0.4mm;
+  letter-spacing: -0.01em;
+}
+
+.sidebar .tags {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6mm;
+}
+
+.sidebar .tag {
+  background: #334155;
+  color: #e2e8f0;
+  padding: 0.3mm 1.4mm;
+  border-radius: 2px;
+  font-size: 0.62rem;
+  white-space: nowrap;
+}
+
+.sidebar .edu-item {
+  margin-bottom: 2.2mm;
+}
+
+.sidebar .edu-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.sidebar .edu-detail {
+  font-size: 0.69rem;
+  color: #94a3b8;
+}
+
+.sidebar .edu-gpa {
+  font-size: 0.71rem;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.sidebar .cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.1mm;
+  font-size: 0.7rem;
+}
+
+.sidebar .cert-name {
+  color: #e2e8f0;
+}
+
+.sidebar .cert-date {
+  color: #64748b;
+  font-size: 0.64rem;
+  flex-shrink: 0;
+  margin-left: 1.5mm;
+}
+
+.sidebar .award-item {
+  margin-bottom: 1.5mm;
+}
+
+.sidebar .award-name {
+  font-size: 0.7rem;
+  color: #e2e8f0;
+  line-height: 1.35;
+}
+
+.sidebar .award-date {
+  font-size: 0.63rem;
+  color: #64748b;
+}
+
+.sidebar .activity-item {
+  margin-bottom: 1.8mm;
+}
+
+.sidebar .activity-name {
+  font-size: 0.72rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.sidebar .activity-detail {
+  font-size: 0.66rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}

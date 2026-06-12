@@ -1,0 +1,180 @@
+.main {
+  flex: 1;
+  padding: 8mm 11mm 7mm 8mm;
+  font-size: 0.86rem;
+  overflow: hidden;
+}
+
+.main .header {
+  margin-bottom: 2.5mm;
+}
+
+.main .header h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.main .header h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #475569;
+  margin-top: 0.5mm;
+}
+
+.main .header .divider {
+  height: 1.5px;
+  background: linear-gradient(to right, #2563eb, #93c5fd, transparent);
+  margin-top: 2.5mm;
+}
+
+.main .section {
+  margin-bottom: 2.8mm;
+}
+
+.main .section-title {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 1.2mm;
+  border-bottom: 1.5px solid #e2e8f0;
+  margin-bottom: 2.5mm;
+}
+
+.main .about-list {
+  list-style: none;
+}
+
+.main .about-list li {
+  position: relative;
+  padding-left: 2.5mm;
+  margin-bottom: 0.8mm;
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.main .about-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.6mm;
+  width: 2.5px;
+  height: 2.5px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.exp-item,
+.proj-item {
+  margin-bottom: 2.4mm;
+}
+
+.exp-item:last-child,
+.proj-item:last-child {
+  margin-bottom: 0;
+}
+
+.exp-header,
+.proj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3mm;
+}
+
+.exp-company,
+.proj-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.exp-period {
+  font-size: 0.7rem;
+  color: #64748b;
+  flex-shrink: 0;
+  margin-left: 2mm;
+}
+
+.exp-role,
+.proj-role {
+  font-size: 0.74rem;
+  color: #475569;
+  margin-bottom: 0.5mm;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8mm;
+  margin-bottom: 1.2mm;
+}
+
+.exp-tag {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 0.3mm 1.8mm;
+  border-radius: 2px;
+  font-size: 0.63rem;
+  font-weight: 500;
+}
+
+.exp-list {
+  list-style: none;
+}
+
+.exp-list li {
+  position: relative;
+  padding-left: 3mm;
+  margin-bottom: 0.6mm;
+  font-size: 0.76rem;
+  color: #334155;
+  line-height: 1.38;
+}
+
+.exp-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+.exp-list li strong {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.proj-desc {
+  font-size: 0.74rem;
+  color: #1e293b;
+  font-weight: 500;
+  margin-bottom: 1mm;
+}
+
+.print-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  z-index: 100;
+  font-family: inherit;
+}
+
+.print-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
+}
