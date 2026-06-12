@@ -178,3 +178,37 @@
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.5);
 }
+
+.theme-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  z-index: 100;
+  font-family: inherit;
+}
+
+.theme-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
+  border-color: #94a3b8;
+}
+
+.theme-btn[aria-pressed='true'] {
+  background: #1e293b;
+  color: #f1f5f9;
+  border-color: #1e293b;
+}
+
+.theme-btn[aria-pressed='true']:hover {
+  background: #0f172a;
+  border-color: #0f172a;
+}

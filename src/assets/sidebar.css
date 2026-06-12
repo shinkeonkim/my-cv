@@ -1,7 +1,46 @@
+.page.theme-dark {
+  --sidebar-bg: #1e293b;
+  --sidebar-border-right: transparent;
+
+  --sidebar-text: #cbd5e1;
+  --sidebar-text-strong: #f1f5f9;
+  --sidebar-text-mid: #e2e8f0;
+  --sidebar-text-muted: #94a3b8;
+  --sidebar-text-dim: #64748b;
+
+  --sidebar-title: #93c5fd;
+  --sidebar-title-border: #334155;
+
+  --sidebar-tag-bg: #334155;
+  --sidebar-tag-text: #e2e8f0;
+
+  --sidebar-accent: #93c5fd;
+}
+
+.page.theme-light {
+  --sidebar-bg: #f8fafc;
+  --sidebar-border-right: #e2e8f0;
+
+  --sidebar-text: #334155;
+  --sidebar-text-strong: #0f172a;
+  --sidebar-text-mid: #1e293b;
+  --sidebar-text-muted: #64748b;
+  --sidebar-text-dim: #94a3b8;
+
+  --sidebar-title: #2563eb;
+  --sidebar-title-border: #e2e8f0;
+
+  --sidebar-tag-bg: #eff6ff;
+  --sidebar-tag-text: #2563eb;
+
+  --sidebar-accent: #2563eb;
+}
+
 .sidebar {
   width: 58mm;
-  background: #1e293b;
-  color: #cbd5e1;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  border-right: 1px solid var(--sidebar-border-right);
   padding: 8mm 5mm 7mm 6mm;
   flex-shrink: 0;
   font-size: 0.83rem;
@@ -19,12 +58,12 @@
 .sidebar .section-title {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #93c5fd;
+  color: var(--sidebar-title);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 2.2mm;
   padding-bottom: 1.2mm;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid var(--sidebar-title-border);
 }
 
 .sidebar .contact-item {
@@ -32,7 +71,7 @@
   align-items: center;
   margin-bottom: 1.3mm;
   font-size: 0.75rem;
-  color: #e2e8f0;
+  color: var(--sidebar-text-mid);
   word-break: break-all;
 }
 
@@ -49,12 +88,12 @@
 .sidebar .contact-item .icon svg {
   width: 12px;
   height: 12px;
-  fill: #94a3b8;
+  fill: var(--sidebar-text-muted);
   display: block;
 }
 
 .sidebar .contact-item a {
-  color: #e2e8f0;
+  color: var(--sidebar-text-mid);
   text-decoration: none;
 }
 
@@ -71,7 +110,7 @@
 
 .sidebar .skill-label {
   font-size: 0.65rem;
-  color: #94a3b8;
+  color: var(--sidebar-text-muted);
   font-weight: 600;
   flex-shrink: 0;
   width: 11mm;
@@ -87,8 +126,8 @@
 }
 
 .sidebar .tag {
-  background: #334155;
-  color: #e2e8f0;
+  background: var(--sidebar-tag-bg);
+  color: var(--sidebar-tag-text);
   padding: 0.3mm 1.4mm;
   border-radius: 2px;
   font-size: 0.62rem;
@@ -102,17 +141,17 @@
 .sidebar .edu-name {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--sidebar-text-strong);
 }
 
 .sidebar .edu-detail {
   font-size: 0.69rem;
-  color: #94a3b8;
+  color: var(--sidebar-text-muted);
 }
 
 .sidebar .edu-gpa {
   font-size: 0.71rem;
-  color: #93c5fd;
+  color: var(--sidebar-accent);
   font-weight: 500;
 }
 
@@ -125,11 +164,11 @@
 }
 
 .sidebar .cert-name {
-  color: #e2e8f0;
+  color: var(--sidebar-text-mid);
 }
 
 .sidebar .cert-date {
-  color: #64748b;
+  color: var(--sidebar-text-dim);
   font-size: 0.64rem;
   flex-shrink: 0;
   margin-left: 1.5mm;
@@ -141,13 +180,13 @@
 
 .sidebar .award-name {
   font-size: 0.7rem;
-  color: #e2e8f0;
+  color: var(--sidebar-text-mid);
   line-height: 1.35;
 }
 
 .sidebar .award-date {
   font-size: 0.63rem;
-  color: #64748b;
+  color: var(--sidebar-text-dim);
 }
 
 .sidebar .activity-item {
@@ -156,12 +195,12 @@
 
 .sidebar .activity-name {
   font-size: 0.72rem;
-  color: #e2e8f0;
+  color: var(--sidebar-text-mid);
   font-weight: 500;
 }
 
 .sidebar .activity-detail {
   font-size: 0.66rem;
-  color: #94a3b8;
+  color: var(--sidebar-text-muted);
   line-height: 1.35;
 }
