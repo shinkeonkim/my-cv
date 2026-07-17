@@ -1,7 +1,8 @@
 import type { CertificationItem } from '@/types/cv'
 
 export const certifications: readonly CertificationItem[] = [
-  { name: 'AWS AIF (AWS Certified AI Practitioner)', date: '2026.07' },
+  { name: 'AWS Certified Cloud Practitioner (CLF-C02)', date: '2026.07' },
+  { name: 'AWS Certified AI Practitioner (AIF)', date: '2026.07' },
   { name: '정보처리기사', date: '2025.09' },
   { name: 'ADsP (데이터 분석 준전문가)', date: '2025.09' },
   { name: '제한무선통신사', date: '2025.06' },
