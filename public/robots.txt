@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shinkeonkim.com/my-cv/sitemap.xml
+Sitemap: https://cv.shinkeonkim.com/sitemap.xml
