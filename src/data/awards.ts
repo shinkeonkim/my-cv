@@ -8,6 +8,6 @@ export const awards: readonly AwardItem[] = [
   { name: '제 3회 국민대학교 알고리즘 대회 장려상', date: '2018.08' },
   { name: '2018 ICT 어워드코리아 이산수학 장려상', date: '2018.07' },
   { name: '2017 Robocup 机器⼈世界杯中国赛华南公开赛 三等奖', date: '한국 대표단 · 2017.12' },
-  { name: '2017 ICT 어워드코리아 C언어 알고리즘 프로그래밍 동상', date: '2017.11' },
+  { name: '2017 ICT 어워드코리아 알고리즘 프로그래밍 동상', date: '2017.07' },
   { name: '2017 제 5회 한국로보컵오픈대회 Soccer Light Weight 부문 2위', date: '2017.02' },
 ]
