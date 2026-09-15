@@ -2,14 +2,26 @@ import type { ProjectEntry } from '@/types/cv'
 
 export const projects: readonly ProjectEntry[] = [
   {
+    name: 'Clotho',
+    period: '2026.08 ~',
+    role: '기획·설계·단독 개발 · TypeScript, React, Vue, SVG, Astro',
+    description: 'JSON 문서 하나로 여러 프레임워크에서 재생·편집·내보내기까지 지원하는 시각화 애니메이션 도구',
+    bullets: [
+      'JSON 문서 + 절대 시각으로 프레임을 계산하는 결정론적 scene graph 설계, React/Vue/DOM/SVG 어댑터에서 렌더링 규칙 공유',
+      'Zod v1 스키마·참조 무결성 검증, legacy 마이그레이션, SVG·GIF·스토리보드 내보내기 구현 — core gzip 25KB의 @kokoa/clotho v0.5.0 공개',
+      '저장소·이미지 업로드·import pipeline을 host에서 주입하는 React 편집기 개발, 독립형 앱과 기존 관리 화면에서 재사용 가능하도록 구성',
+      '공개 npm 패키지를 직접 실행하는 React·Vue·Vanilla·MDX 예제와 JSON Schema 문서 구축, Cloudflare Workers 배포',
+    ],
+  },
+  {
     name: 'meFit (미핏)',
     period: '2026.03 ~ 2026.06',
-    role: '4인 팀 PM / Backend·Infra Lead · Django, DRF, Channels, k3s, AWS Lambda, pgvector, LiteLLM',
+    role: '4인 팀 PM / Backend·Infra Lead / AI·Frontend · Django, DRF, Channels, k3s, AWS Lambda, pgvector, LiteLLM',
     description: '이력서·채용공고 기반 AI 가상 면접 훈련 플랫폼 (캡스톤 디자인 금상)',
     bullets: [
       'EC2 위 K3s 2노드 클러스터(nodepool 분리, RollingUpdate) 구성으로 EKS 대비 컨트롤 플레인 비용 절감',
-      'S3 → SNS fan-out → 3 SQS → Lambda 4+1개(video/frame/audio/face/voice) 서버리스 영상 분석 파이프라인, SSE 실시간 진행 스트리밍',
-      'LiteLLM Proxy 도입으로 6개 Pod의 LLM 호출 중앙화 + OpenAI/Bedrock 자동 폴백 + 가상키 Spend 추적',
+      'S3 → SNS → SQS → Lambda 영상 분석, 이력서 병렬 분석 30~60초·개당 $0.006 및 SSE 진행 스트리밍',
+      'RDS 커넥션 고갈 해결: Celery task 전후 연결 정리, SQLAlchemy 풀 제한, idle timeout 및 CloudWatch 알람',
       'pgvector 이중 임베딩(원문 청크 + 구조화 JSON) RAG 면접 질문 생성, Factory Boy + @patch 모킹 기반 테스트 커버리지 91%',
     ],
   },

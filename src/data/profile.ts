@@ -1,6 +1,6 @@
 export const profile = {
   name: '김신건',
-  role: 'Backend Engineer',
+  role: 'SW Engineer',
 } as const
 
 export const about: readonly string[] = [

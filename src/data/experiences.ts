@@ -4,13 +4,13 @@ export const experiences: readonly ExperienceEntry[] = [
   {
     company: '(주) 그렙 (프로그래머스)',
     period: '2024.07 ~ 2025.03',
-    role: '교육솔루션팀 / Backend Engineer',
+    role: '교육솔루션팀 / SW Engineer',
     tags: ['Ruby on Rails', 'ActiveAdmin', 'Sidekiq', 'PostgreSQL', 'Python', 'Django'],
     bullets: [
-      '<strong>KDT 수강생 역량진단리포트 백엔드 단독 개발</strong> — 문제 타입별 역량 모델링, v1→v2 도메인 재설계 의사결정, feature flag 점진 전환, 5차 시리즈 릴리즈',
-      '<strong>원티드 KDT(wantedlms) 멀티 테넌트 분기</strong> — Settings.features 기반 환경별 기능·어드민·알림 분기, 주2회 배포 cron 운영',
+      '<strong>KDT 수강생 역량진단리포트 백엔드 단독 개발</strong> — 채점·정규화·리포트/알림 파이프라인, PostgreSQL 윈도우 함수 백분위 계산 및 배치 쿼리 인덱스 최적화',
+      '<strong>원티드 KDT(wantedlms) 멀티 테넌트 분기</strong> — 환경별 YAML 설정으로 기능 분기, 공통 코드베이스 유지로 저장소 이원화 비용 회피',
       '<strong>프로그래머스 프로젝트 LMS V1 API + service object 분리</strong> — /api/school → /api/v1/lms 도메인별 신규 API, 에러 응답 통일, 수료증·재초대 service object화',
-      '<strong>사내 PR 리뷰 알림 봇 전사 확장</strong> — 단일팀 → 4팀, Slack 사용자그룹 동적 조회 + D-Day cron 자동화',
+      '<strong>LMS 운영 이슈 해결</strong> — Sentry/Slack 기반 근본 원인 추적과 회귀 스펙 보강, alias_attribute로 검색 오류를 수정해 마이그레이션 다운타임 회피',
     ],
   },
   {
@@ -19,7 +19,7 @@ export const experiences: readonly ExperienceEntry[] = [
     role: '채용서비스팀 / SW Engineer',
     tags: ['Ruby on Rails', 'Vue.js', 'TypeScript', 'Flask', 'AWS Lambda', 'Terraform'],
     bullets: [
-      '<strong>이력서 모델 jsonb → 정규화 무중단 마이그레이션</strong> — 6개 도메인 정규화, ignore_columns → 컬럼 drop 4단계 playbook 확립',
+      '<strong>이력서 모델 jsonb → 정규화 무중단 마이그레이션</strong> — 6개 도메인 정규화, ignored_columns → 컬럼 drop 4단계 playbook 확립',
       '<strong>전사 본인인증 서비스 신규 구축</strong> — Flask · AWS Lambda(Container Image) · DynamoDB(TTL) · Terraform 3환경 분리, ActionCable WebSocket 통합',
       '<strong>비즈니스 / 채용공고 SSR → SPA 전환</strong> — Vue Composition API + TypeScript, CoffeeScript 잔재 제거, 필터 시스템 컴포넌트화 (URL 동기화 · AutoComplete · sticky)',
       '<strong>GitHub 분석기 정밀도 개선</strong> — Rugged 정렬 명시 + 엣지 케이스 대응으로 미분석 커밋 0건, git:// → https:// 즉시 대응',

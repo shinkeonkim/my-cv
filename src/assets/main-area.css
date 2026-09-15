@@ -1,6 +1,6 @@
 .main {
   flex: 1;
-  padding: 8mm 11mm 7mm 8mm;
+  padding: 7mm 11mm 6mm 8mm;
   font-size: 0.86rem;
   overflow: hidden;
 }
@@ -71,7 +71,7 @@
 
 .exp-item,
 .proj-item {
-  margin-bottom: 2.4mm;
+  margin-bottom: 1.6mm;
 }
 
 .exp-item:last-child,
