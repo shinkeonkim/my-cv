@@ -2,6 +2,13 @@ import type { ExperienceEntry } from '@/types/cv'
 
 export const experiences: readonly ExperienceEntry[] = [
   {
+    company: 'acrossB',
+    period: '2026.09 ~ 현재',
+    role: 'Full Stack Developer',
+    tags: ['Nest.js', 'React.js', 'TypeScript', 'AWS'],
+    bullets: [],
+  },
+  {
     company: '(주) 그렙 (프로그래머스)',
     period: '2024.07 ~ 2025.03',
     role: '교육솔루션팀 / SW Engineer',
